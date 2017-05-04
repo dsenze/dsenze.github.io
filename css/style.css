@@ -1,0 +1,11 @@
+body {
+    text-align: center;
+}
+
+.infobox {
+    position: absolute;
+    top: 200px;
+    right: 150px;
+    width: 100%;
+    font-size: 100px;
+}
