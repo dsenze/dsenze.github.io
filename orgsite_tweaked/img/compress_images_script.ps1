@@ -34,6 +34,6 @@ For example, you can use convert binary to optimize your JPEG images with the fo
 convert INPUT.jpg -sampling-factor 4:2:0 -strip [-resize WxH] [-quality N] [-interlace JPEG] [-colorspace Gray/RGB] OUTPUT.jpg #>
 
 Get-ChildItem | where{$_.name -match ".jpeg" -or $_.name -match ".jpg"} | ForEach-Object{
-    magick convert $_.name -sampling-factor '4:2:0' -strip -quality 85 -interlace JPEG -colorspace RGB $_.name
+    magick convert $_.name -sampling-factor '4:2:0' -strip -quality 50 -interlace JPEG -colorspace RGB $_.name
 }
 
