@@ -20,6 +20,6 @@ function myFunction() {
     }
 }
 
-var interval = setInterval(function() { myFunction(); }, 5000);
+var interval = setInterval(function() { myFunction(); }, 10000);
 
 //
