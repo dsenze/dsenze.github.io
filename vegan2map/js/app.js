@@ -74,7 +74,6 @@ var stringStartsWith = function(string, startsWith) {
 
 
 var createHTML = function(varhtml, htmlobject) {
-    console.log(htmlobject)
     if (htmlobject === undefined) {
         return varhtml.replace('%object', "n/a")
     } else {
@@ -98,7 +97,6 @@ var AppViewModel = function() {
                 // when user click on item in list it will open infowindow on map.
                 item.marker.setVisible(true);
                 this.item = ko.observable(item.name), this.showMarkerOnMap = function(obj) {
-                    console.log(obj)
                     infowindow.setContent(obj.info);
                     infowindow.open(self.google.map, obj.marker);
                     self.google.map.setCenter(obj.marker.getPosition());
@@ -138,7 +136,7 @@ var AppViewModel = function() {
         self.google.map = new google.maps.Map(document.getElementById('map'), {
             zoom: 10,
             center: self.currentCity,
-            // This is where you would paste any style found on Snazzy Maps.
+            // style fond at snazzy maps: https://snazzymaps.com/style/15883/green-canvas
             styles: [{ "featureType": "all", "elementType": "geometry", "stylers": [{ "color": "#8dc04a" }] }, { "featureType": "all", "elementType": "labels.text.fill", "stylers": [{ "gamma": 0.01 }, { "lightness": 20 }] }, { "featureType": "all", "elementType": "labels.text.stroke", "stylers": [{ "saturation": -31 }, { "lightness": -33 }, { "weight": 2 }, { "gamma": 0.8 }] }, { "featureType": "all", "elementType": "labels.icon", "stylers": [{ "visibility": "off" }] }, { "featureType": "landscape", "elementType": "geometry", "stylers": [{ "lightness": 30 }, { "saturation": 30 }] }, { "featureType": "poi", "elementType": "geometry", "stylers": [{ "saturation": 20 }] }, { "featureType": "poi.park", "elementType": "geometry", "stylers": [{ "lightness": 20 }, { "saturation": -20 }] }, { "featureType": "road", "elementType": "geometry", "stylers": [{ "lightness": 10 }, { "saturation": -30 }] }, { "featureType": "road", "elementType": "geometry.stroke", "stylers": [{ "saturation": 25 }, { "lightness": 25 }] }, { "featureType": "water", "elementType": "all", "stylers": [{ "lightness": -20 }] }]
 
 
@@ -213,7 +211,6 @@ var AppViewModel = function() {
                     google.maps.event.addListener(marker, 'click', function() {
                         infowindow.setContent(info);
                         infowindow.open(self.google.map, this);
-                        console.log(infowindow)
                         self.google.map.setCenter(this.getPosition());
                         marker.setAnimation(google.maps.Animation.BOUNCE);
                     });
