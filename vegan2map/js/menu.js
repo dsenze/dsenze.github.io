@@ -1,5 +1,3 @@
-//  $(".open-menu-button").hide()
-//  $(".close-menu-button").hide()
 $(".open-menu-button").click(function() {
     $(".filter-map-content").show()
     $('.responsive-menu').toggleClass('expand')
