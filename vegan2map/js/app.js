@@ -1,3 +1,4 @@
+// Start application viewmodel.
 function init() {
     ko.applyBindings((new AppViewModel));
 }
@@ -8,6 +9,7 @@ var city = function(lat, lng) {
     this.lat = lat;
     this.lng = lng;
 };
+// holds google map and all markers.
 var google = function() {
     var self = this
     this.map
@@ -23,7 +25,6 @@ var resturant = function(name, marker, info, rating, locationImg) {
     this.info = info;
     this.rating = rating;
     this.locationImg = locationImg;
-
 };
 
 //API functions
